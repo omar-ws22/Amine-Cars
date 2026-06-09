@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ironclad Rentals - Morocco Car Rental</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <a class="brand" href="#home" aria-label="Ironclad Rentals home">
+                <span class="brand-mark">
+                    <img class="brand-logo" src="images/logo-car.png" alt="Ironclad Rentals logo">
+                </span>
+                <span class="brand-copy">
+                    <span class="brand-name">Ironclad Rentals</span>
+                    <span class="brand-tagline">Location de voiture</span>
+                </span>
+            </a>
+            <nav class="navbar">
+                <div class="nav-actions">
+                    <a class="nav-action" href="#home">Manage booking</a>
+                    <button class="lang-btn" type="button" aria-label="Language">
+                        <span class="lang-dot"></span>
+                    </button>
+                    <button class="hamburger" type="button" aria-label="Menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+                <ul class="nav-links" aria-label="Primary navigation">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#fleet">Fleet</a></li>
+                    <li><a href="#locations">Locations</a></li>
+                    <li><a href="#about">About</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="hero-overlay"></div>
+        <div class="container">
+            <div class="hero-content">
+                <h1>Best Morocco Car Rental Deals in One Search</h1>
+                <p>Morocco car rentals</p>
+                <div class="booking-panel" aria-label="Booking form">
+                    <form id="bookingForm" class="booking-grid">
+                        <div class="booking-field booking-field--full" id="pickupLocationField">
+                            <div class="booking-label">Pickup location!!</div>
+                            <div class="booking-control booking-control--icon">
+                                <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+                                <select id="pickupLocation" required>
+                                    <option value="">Choose pickup location...</option>
+                                    <option value="Casablanca Airport">Casablanca Airport</option>
+                                    <option value="Marrakech Airport">Marrakech Airport</option>
+                                    <option value="Rabat Airport">Rabat Airport</option>
+                                    <option value="Tangier Airport">Tangier Airport</option>
+                                    <option value="Agadir Airport">Agadir Airport</option>
+                                </select>
+                                <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+                            </div>
+                        </div>
+
+                        <div class="booking-field booking-dropoff-wrapper" id="dropoffLocationWrapper" hidden aria-hidden="true">
+                            <div class="booking-label">Drop-off location</div>
+                            <div class="booking-control booking-control--icon">
+                                <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+                                <select id="dropoffLocation" name="dropoffLocation">
+                                    <option value="">Choose drop-off location...</option>
+                                    <option value="Casablanca Airport">Casablanca Airport</option>
+                                    <option value="Marrakech Airport">Marrakech Airport</option>
+                                    <option value="Rabat Airport">Rabat Airport</option>
+                                    <option value="Tangier Airport">Tangier Airport</option>
+                                    <option value="Agadir Airport">Agadir Airport</option>
+                                </select>
+                                <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+                            </div>
+                        </div>
+
+                        <label class="booking-check booking-field--full" for="differentDropoff">
+                            <input type="checkbox" id="differentDropoff">
+                            <span>Different Drop-off Location?</span>
+                        </label>
+
+                        <div class="booking-field">
+                            <div class="booking-label">Date of pickup</div>
+                            <div class="booking-control-group">
+                                <div class="booking-control booking-control--icon">
+                                    <i class="fa-regular fa-calendar" aria-hidden="true"></i>
+                                    <input type="date" id="pickupDate" required>
+                                </div>
+                                <div class="booking-control booking-control--icon">
+                                    <i class="fa-regular fa-clock" aria-hidden="true"></i>
+                                    <input type="time" id="pickupTime" value="12:00" required>
+                                    <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="booking-field">
+                            <div class="booking-label">Date of return</div>
+                            <div class="booking-control-group">
+                                <div class="booking-control booking-control--icon">
+                                    <i class="fa-regular fa-calendar" aria-hidden="true"></i>
+                                    <input type="date" id="returnDate" required>
+                                </div>
+                                <div class="booking-control booking-control--icon">
+                                    <i class="fa-regular fa-clock" aria-hidden="true"></i>
+                                    <input type="time" id="returnTime" value="12:00" required>
+                                    <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="booking-footer booking-field--full">
+                            <div class="booking-meta">
+                                <div class="booking-meta-row">
+                                    <span>Driver age between 30-65?</span>
+                                    <span class="booking-meta-sep">|</span>
+                                    <a class="booking-meta-link" href="#" onclick="return false;">Add a Discount Code</a>
+                                </div>
+                                <a class="booking-edit" href="#" onclick="return false;">
+                                    <i class="fa-regular fa-pen-to-square" aria-hidden="true"></i>
+                                    <span>Edit reservation</span>
+                                </a>
+                            </div>
+
+                            <div class="booking-cta">
+                                <div class="booking-field booking-age">
+                                    <select id="driverAge" required aria-label="Driver age">
+                                        <option value="">Age 30-65</option>
+                                        <option value="30">30</option>
+                                        <option value="35">35</option>
+                                        <option value="40">40</option>
+                                        <option value="45">45</option>
+                                        <option value="50">50</option>
+                                        <option value="55">55</option>
+                                        <option value="60">60</option>
+                                        <option value="65">65</option>
+                                    </select>
+                                </div>
+                                <button type="submit" class="btn-start">START BOOKING</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials">
+        <div class="container">
+            <div class="reviews-slider" aria-label="Favourite reviews">
+                <div class="reviews-viewport">
+                    <div class="reviews-track">
+                        <article class="review-card">
+                            <p class="review-text">Everything was amazing and all the staff the guys and girl are very professional</p>
+                            <div class="review-bottom">
+                                <div class="review-stars" aria-label="5 stars">
+                                    <i class="fa-solid fa-star" aria-hidden="true"></i>
+                                    <i class="fa-solid fa-star" aria-hidden="true"></i>
+                                    <i class="fa-solid fa-star" aria-hidden="true"></i>
+                                    <i class="fa-solid fa-star" aria-hidden="true"></i>
+                                    <i class="fa-solid fa-star" aria-hidden="true"></i>
+                                </div>
+                                <div class="review-author">Oumayma Ghouraf, <span>2 years ago</span></div>
+                            </div>
+                        </article>
+
+                        <article class="review-card">
+                            <p class="review-text">Excelent service and very good value-for-money-ratio. My customer relation with Ironclad Rentals started in 2020 and since, I am highly satisfied.</p>
+                            <div class="review-bottom">
+                                <div class="review-stars" aria-label="5 stars">
+                                    <i class="fa-solid fa-star" aria-hidden="true"></i>
+                                    <i class="fa-solid fa-star" aria-hidden="true"></i>
+                                    <i class="fa-solid fa-star" aria-hidden="true"></i>
+                                    <i class="fa-solid fa-star" aria-hidden="true"></i>
+                                    <i class="fa-solid fa-star" aria-hidden="true"></i>
+                                </div>
+                                <div class="review-author">Mohamed Elmahdi, <span>2 years ago</span></div>
+                            </div>
+                        </article>
+
+                        <article class="review-card">
+                            <p class="review-text">We had a very good experience with SOVOY CARS TEAM , they are 24 hours available and whenever we require car they arrange for us for every trip of us</p>
+                            <div class="review-bottom">
+                                <div class="review-stars" aria-label="5 stars">
+                                    <i class="fa-solid fa-star" aria-hidden="true"></i>
+                                    <i class="fa-solid fa-star" aria-hidden="true"></i>
+                                    <i class="fa-solid fa-star" aria-hidden="true"></i>
+                                    <i class="fa-solid fa-star" aria-hidden="true"></i>
+                                    <i class="fa-solid fa-star" aria-hidden="true"></i>
+                                </div>
+                                <div class="review-author">RJ HOLDINGS, <span>2 years ago</span></div>
+                            </div>
+                        </article>
+
+                        <article class="review-card">
+                            <p class="review-text">I took my car in Rabat and it worked well. They are very professional and the price are the cheaper i found in Morocco.</p>
+                            <div class="review-bottom">
+                                <div class="review-stars" aria-label="5 stars">
+                                    <i class="fa-solid fa-star" aria-hidden="true"></i>
+                                    <i class="fa-solid fa-star" aria-hidden="true"></i>
+                                    <i class="fa-solid fa-star" aria-hidden="true"></i>
+                                    <i class="fa-solid fa-star" aria-hidden="true"></i>
+                                    <i class="fa-solid fa-star" aria-hidden="true"></i>
+                                </div>
+                                <div class="review-author">Mattia Biazzi, <span>2 years ago</span></div>
+                            </div>
+                        </article>
+
+                        <article class="review-card">
+                            <p class="review-text">The service, the staff were very co-operative. Time to time they were asking if anything required, we are at your service.</p>
+                            <div class="review-bottom">
+                                <div class="review-stars" aria-label="5 stars">
+                                    <i class="fa-solid fa-star" aria-hidden="true"></i>
+                                    <i class="fa-solid fa-star" aria-hidden="true"></i>
+                                    <i class="fa-solid fa-star" aria-hidden="true"></i>
+                                    <i class="fa-solid fa-star" aria-hidden="true"></i>
+                                    <i class="fa-solid fa-star" aria-hidden="true"></i>
+                                </div>
+                                <div class="review-author">Shehzad Gadit, <span>2 years ago</span></div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+
+                <div class="reviews-footer">
+                    <div class="reviews-caption">Rated <strong>5.00</strong> / 5 based on <strong>5 reviews</strong>. Showing our favourite reviews</div>
+                    <div class="reviews-dots" aria-label="Review slider pagination"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="fleet" id="fleet">
+        <div class="container">
+            <div class="fleet-header">
+                <h2 class="underlined">Featured cars</h2>
+                <a class="fleet-all" href="#" onclick="return false;">All vehicles <span class="fleet-all-dot"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i></span></a>
+            </div>
+
+            <div class="fleet-panel">
+                <div class="vehicles-grid">
+                    <article class="vehicle-card vehicle-card--new">
+                        <div class="vehicle-top">
+                            <div class="vehicle-type vehicle-type--suv">SUV</div>
+                            <h3 class="vehicle-title">Land Rover Evoque <span class="vehicle-new">(New Arrival)</span></h3>
+                            <p class="vehicle-desc">or similar vehicle...</p>
+                        </div>
+
+                        <div class="vehicle-media">
+                            <img src="images/featured-car.png" alt="Land Rover Evoque" loading="lazy">
+                        </div>
+
+                        <ul class="vehicle-specs">
+                            <li><i class="fa-solid fa-gas-pump" aria-hidden="true"></i><span>Diesel</span></li>
+                            <li><i class="fa-solid fa-gears" aria-hidden="true"></i><span>Automatic</span></li>
+                            <li><i class="fa-solid fa-door-open" aria-hidden="true"></i><span>5 door(s)</span></li>
+                            <li><i class="fa-solid fa-user" aria-hidden="true"></i><span>5 people</span></li>
+                            <li><i class="fa-solid fa-suitcase-rolling" aria-hidden="true"></i><span>2+1 bag(s)</span></li>
+                            <li><i class="fa-regular fa-snowflake" aria-hidden="true"></i><span>A/C</span></li>
+                        </ul>
+
+                        <button class="vehicle-btn" onclick="bookVehicle('Land Rover Evoque')">Book now</button>
+                    </article>
+
+                    <article class="vehicle-card">
+                        <div class="vehicle-top">
+                            <div class="vehicle-type vehicle-type--luxury">Luxury</div>
+                            <h3 class="vehicle-title">Land Rover Sport</h3>
+                            <p class="vehicle-desc">or similar vehicle...</p>
+                        </div>
+
+                        <div class="vehicle-media">
+                            <img src="images/featured-car.png" alt="Land Rover Sport" loading="lazy">
+                        </div>
+
+                        <ul class="vehicle-specs">
+                            <li><i class="fa-solid fa-gas-pump" aria-hidden="true"></i><span>Diesel</span></li>
+                            <li><i class="fa-solid fa-gears" aria-hidden="true"></i><span>Automatic</span></li>
+                            <li><i class="fa-solid fa-door-open" aria-hidden="true"></i><span>5 door(s)</span></li>
+                            <li><i class="fa-solid fa-user" aria-hidden="true"></i><span>5 people</span></li>
+                            <li><i class="fa-solid fa-suitcase-rolling" aria-hidden="true"></i><span>4+2 bag(s)</span></li>
+                            <li><i class="fa-regular fa-snowflake" aria-hidden="true"></i><span>A/C</span></li>
+                        </ul>
+
+                        <button class="vehicle-btn" onclick="bookVehicle('Land Rover Sport')">Book now</button>
+                    </article>
+
+                    <article class="vehicle-card">
+                        <div class="vehicle-top">
+                            <div class="vehicle-type vehicle-type--luxury">Luxury</div>
+                            <h3 class="vehicle-title">Land Rover Vogue</h3>
+                            <p class="vehicle-desc">or similar vehicle...</p>
+                        </div>
+
+                        <div class="vehicle-media">
+                            <img src="images/featured-car.png" alt="Land Rover Vogue" loading="lazy">
+                        </div>
+
+                        <ul class="vehicle-specs">
+                            <li><i class="fa-solid fa-gas-pump" aria-hidden="true"></i><span>Diesel</span></li>
+                            <li><i class="fa-solid fa-gears" aria-hidden="true"></i><span>Automatic</span></li>
+                            <li><i class="fa-solid fa-door-open" aria-hidden="true"></i><span>5 door(s)</span></li>
+                            <li><i class="fa-solid fa-user" aria-hidden="true"></i><span>5 people</span></li>
+                            <li><i class="fa-solid fa-suitcase-rolling" aria-hidden="true"></i><span>4+4 bag(s)</span></li>
+                            <li><i class="fa-regular fa-snowflake" aria-hidden="true"></i><span>A/C</span></li>
+                        </ul>
+
+                        <button class="vehicle-btn" onclick="bookVehicle('Land Rover Vogue')">Book now</button>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="locations" id="locations">
+        <div class="container">
+            <div class="split-header">
+                <h2 class="underlined">Popular car rental locations</h2>
+            </div>
+            <div class="locations-grid">
+                <div class="location-card">
+                    <div class="location-icon"><i class="fa-solid fa-plane" aria-hidden="true"></i></div>
+                    <h3>Casablanca Mohammed 5 Airport</h3>
+                    <p>Best car rental deals at Casablanca Airport Mohammed V. Compare prices from top providers. Free cancellation & instant booking. Starting from $9/day.</p>
+                    <a href="#" class="read-more" onclick="return false;">Read more <span class="read-more-dot"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i></span></a>
+                </div>
+                <div class="location-card">
+                    <div class="location-icon"><i class="fa-solid fa-location-crosshairs" aria-hidden="true"></i></div>
+                    <h3>Casablanca City</h3>
+                    <p>Find the perfect rental car for your Casablanca trip at unbeatable prices. Easy booking, no hidden fees, and 24/7 support. Drive more, save more with Ironclad Rentals.</p>
+                    <a href="#" class="read-more" onclick="return false;">Read more <span class="read-more-dot"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i></span></a>
+                </div>
+                <div class="location-card">
+                    <div class="location-icon"><i class="fa-solid fa-plane" aria-hidden="true"></i></div>
+                    <h3>Marrakech Airport</h3>
+                    <p>Find car rental in Marrakech. We offer the best prices on car rentals in Marakech.</p>
+                    <a href="#" class="read-more" onclick="return false;">Read more <span class="read-more-dot"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i></span></a>
+                </div>
+                <div class="location-card">
+                    <div class="location-icon"><i class="fa-solid fa-plane" aria-hidden="true"></i></div>
+                    <h3>Rabat airport</h3>
+                    <p>Find car rental in Rabat. We offer the best prices on car rentals in Rabat.</p>
+                    <a href="#" class="read-more" onclick="return false;">Read more <span class="read-more-dot"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i></span></a>
+                </div>
+                <div class="location-card">
+                    <div class="location-icon"><i class="fa-solid fa-plane" aria-hidden="true"></i></div>
+                    <h3>Tanger airport</h3>
+                    <p>Book your car rental at Tangier Airport (TNG) with Ironclad Rentals. New cars, airport pickup, full insurance options and 24/7 support for car rental in Tangier.</p>
+                    <a href="#" class="read-more" onclick="return false;">Read more <span class="read-more-dot"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i></span></a>
+                </div>
+                <div class="location-card">
+                    <div class="location-icon"><i class="fa-solid fa-plane" aria-hidden="true"></i></div>
+                    <h3>Agadir Airport</h3>
+                    <p>Find car rental in Agadir. We offer the best prices on car rentals in Agadir.</p>
+                    <a href="#" class="read-more" onclick="return false;">Read more <span class="read-more-dot"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i></span></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-split">
+                <div class="about-col">
+                    <h2 class="underlined">Why Choose Ironclad Rentals?</h2>
+                    <p>We specialize in Car Rental in Morocco. We have built a reputation for quality and professionalism, and we offer a variety of services to fit your needs.</p>
+                    <p>You might ask why we're different from other car rental companies. As an experienced and resourceful company, we offer you a level of service and support that you will not find anywhere else.</p>
+                    <p>We have a wide range of vehicles. You can choose whatever car you want and book it online. We got a lot of options, and you'll be able to find the best car for your trip. Not only that, but the prices are low too.</p>
+                    <p>You can rent a compact vehicle for as low as <strong>150 MAD</strong> per day. Or, if you're looking for something more comfortable, you can rent an SUV for as little as <strong>300 MAD</strong> per day.</p>
+                    <p>We understand that travel can be stressful, so we are always available to help our customers with anything they might need.</p>
+                </div>
+
+                <div class="about-col">
+                    <h2 class="underlined">Why should you book with us?</h2>
+                    <p>When you book with us, you can expect great service. Our team is well-trained and experienced in providing excellent customer service. We have a 24/7 on-call service that will be there for you whenever you need them.</p>
+                    <p>In addition to the benefits of booking with us, we also offer exclusive deals like discounts and coupons that will help you save money on your next car rental experience.</p>
+                    <div class="about-subtitle">Benefits of booking a car with us:</div>
+                    <ul class="benefit-list">
+                        <li>We offer competitive rates and discounts.</li>
+                        <li>Safe and reliable cars</li>
+                        <li>Flexible pickup and drop off locations</li>
+                        <li>24/7 customer service</li>
+                        <li>Our easy booking process</li>
+                    </ul>
+                    <p>With all these benefits, it's easy to see why Ironclad Rentals is one of Morocco's best car rental companies!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-brand-name">Ironclad Rentals</div>
+                    <div class="footer-brand-tagline">Location de voiture</div>
+                    <p class="footer-desc">Our goal is to provide the best service and the most competitive rental prices without sacrificing quality or service levels.</p>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Help & Information</h4>
+                    <a href="#" onclick="return false;">FAQ</a>
+                    <a href="#" onclick="return false;">Help/Support</a>
+                    <a href="#about">About us</a>
+                    <a href="#locations">Locations</a>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Top destinations</h4>
+                    <a href="#" onclick="return false;">Casablanca Airport</a>
+                    <a href="#" onclick="return false;">Marrakech Airport</a>
+                    <a href="#" onclick="return false;">Rabat Airport</a>
+                    <a href="#" onclick="return false;">Tangier</a>
+                    <a href="#" onclick="return false;">Casablanca City</a>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <a href="https://wa.me/212600000000" target="_blank" rel="noreferrer">WhatsApp</a>
+                    <a href="#" onclick="return false;">+212 XX XXX XXX</a>
+                    <a href="#" onclick="return false;">info@ironcladrentals.ma</a>
+                </div>
+            </div>
+
+            <div class="footer-social" aria-label="Social links">
+                <a href="#" aria-label="Facebook" onclick="return false;"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></a>
+                <a href="#" aria-label="Instagram" onclick="return false;"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+                <a href="#" aria-label="LinkedIn" onclick="return false;"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a>
+                <a href="#" aria-label="YouTube" onclick="return false;"><i class="fa-brands fa-youtube" aria-hidden="true"></i></a>
+                <a href="#" aria-label="Twitter" onclick="return false;"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i></a>
+                <a href="https://wa.me/212600000000" aria-label="WhatsApp" target="_blank" rel="noreferrer"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i></a>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 Ironclad Rentals. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
