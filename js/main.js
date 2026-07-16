@@ -182,7 +182,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const returnTime = document.getElementById('returnTime').value;
         const driverAge = document.getElementById('driverAge').value;
         
-        const whatsappNumber = '212600000000';
+        const whatsappNumber = '212635225668';
         const message = `Bonjour, je voudrais louer une voiture chez Ironclad Rentals:
 - Lieu de prise: ${pickupLocation}
 - Date de prise: ${pickupDate} à ${pickupTime}
@@ -194,7 +194,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     window.bookVehicle = function(vehicleName) {
-        const whatsappNumber = '212600000000';
+        const whatsappNumber = '212635225668';
         const message = `Bonjour, je voudrais louer un ${vehicleName} chez Ironclad Rentals`;
         const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
         window.open(whatsappUrl, '_blank');
