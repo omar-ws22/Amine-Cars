@@ -1089,3 +1089,6 @@ body {
         font-size: 1.7rem;
     }
 }
+.booking-footer .booking-meta,.booking-footer .booking-cta .booking-age{
+    display: none !important;
+}
